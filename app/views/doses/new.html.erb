@@ -1,0 +1,12 @@
+<h1 class="text-center">Add a Dose</h1>
+<div class="row">
+  <div class="col-8 offset-2">
+    <!-- # Simple Form needs the 2 objects to build the right request
+    # like simple_form_for [ @restaurant, @review ]...-->
+    <%= simple_form_for [@cocktail, @dose] do |f| %>
+      <%= f.association :ingredient, collection: @ingredients %>
+      <%= f.input :description, placeholder: "Enter amount and type of unit/measurement", hint: "Examples: '6 leaves', '50 ml', '20 g'" %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>
