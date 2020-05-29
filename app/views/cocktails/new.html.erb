@@ -1,19 +1,29 @@
+<!-- banner -->
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <%= link_to cocktails_path, class: "navbar-brand" do %>
+    <%= image_tag "https://cdn.mos.cms.futurecdn.net/rWqNmhb52HwxS8n8j7ryPP.jpg" %>
+  <% end %>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= link_to "Menu/Home", cocktails_path, class: "btn btn-gradient" %>
+      </li>
+    </ul>
+  </div>
+</div>
 
 <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://static.vinepair.com/wp-content/uploads/2015/12/libation-inside-header.jpg)">
   Add New Cocktail
 </div>
 
-<h1 class="text-center">Add a cocktail</h1>
 <div class="row">
   <div class="col-8 offset-2">
     <%= simple_form_for @cocktail do |f| %>
       <%= f.input  :name, placeholder: "Enter cocktail name", hint: "Must be new (not be on our menu yet)" %>
       <%= f.input :photo, as: :file %>
-      <%= f.submit "Add cocktail!", class: "btn btn-primary" %>
+      <%= f.submit "Add this new cocktail", class: "btn btn-gradient" %>
     <% end %>
-  </div>
-  <div class="col-8 offset-2">
-    <%= link_to "Back to menu!", cocktails_path, class: "btn btn-info"%>
   </div>
 </div>
 

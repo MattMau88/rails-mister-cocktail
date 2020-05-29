@@ -1,9 +1,27 @@
+<!-- banner -->
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <%= link_to cocktails_path, class: "navbar-brand" do %>
+    <%= image_tag "https://cdn.mos.cms.futurecdn.net/rWqNmhb52HwxS8n8j7ryPP.jpg" %>
+  <% end %>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= link_to "Menu/Home", cocktails_path, class: "btn btn-gradient" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Add New Cocktail", new_cocktail_path, class: "btn btn-gradient" %>
+      </li>
+    </ul>
+  </div>
+</div>
+
 <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://static.vinepair.com/wp-content/uploads/2015/12/libation-inside-header.jpg)">
   <%= @cocktail.name %> Details
 </div>
 
 <div class="card-product">
-  <img src=<%= cl_image_path @cocktail.photo.key, height: 150, width: 200, crop: :thumb %> />
+  <img src=<%= cl_image_path @cocktail.photo.key, height: 150, width: 200, crop: :thumb, gravity: :face %> />
   <div class="card-product-infos">
     <h2><%= @cocktail.name %></h2>
     <ul>
@@ -17,6 +35,5 @@
 </div>
 
 
-<p><%= link_to "Add a dose!", new_cocktail_dose_path(@cocktail)  %></p>
-<p><%= link_to "Back to menu!", cocktails_path, class: "btn btn-info"%></p>
+<p><%= link_to "Add a dose!", new_cocktail_dose_path(@cocktail), class: "btn btn-gradient" %></p>
 

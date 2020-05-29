@@ -1,10 +1,32 @@
+<!-- banner -->
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <%= link_to cocktails_path, class: "navbar-brand" do %>
+    <%= image_tag "https://cdn.mos.cms.futurecdn.net/rWqNmhb52HwxS8n8j7ryPP.jpg" %>
+  <% end %>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= link_to "Menu/Home", cocktails_path, class: "btn btn-gradient" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Add New Cocktail", new_cocktail_path, class: "btn btn-gradient" %>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- banner -->
+
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://i.pinimg.com/originals/84/39/c9/8439c9b7fcbeb6fea0f7bd3f2bae8a0b.jpg);">
   <div class="container">
     <h1>Dionysus Cocktails: Drink like a Greek god! 🍸</h1>
-    <p>Join us on the olymp of cocktails. Browse our cocktials below or add your own creation!</p>
-    <a><%= link_to "+Add New Cocktail!", new_cocktail_path, class: "btn btn-warning" %></a>
+    <p>Join us on the olymp of cocktails. Browse our cocktails below or add your own creation!</p>
+    <a><%= link_to "+Add New Cocktail", new_cocktail_path, class: "btn btn-gradient" %></a>
   </div>
 </div>
+
+<!-- cocktail menu list -->
 
 <div class="container">
   <div class="row my-3">
@@ -12,10 +34,10 @@
 
       <div class="col-xs-12 col-sm-6">
         <div class="card-trip">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+          <img src=<%= cl_image_path cocktail.photo.key, height: 150, width: 200, crop: :thumb, gravity: :face %> />
           <div class="card-trip-infos">
             <div>
-              <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
+              <h2><%= link_to cocktail.name, cocktail_path(cocktail), class: "btn btn-gradient" %></h2>
             </div>
             <h2 class="card-trip-pricing">Strong</h2>
           </div>
@@ -23,9 +45,36 @@
       </div>
 
     <% end %>
+
   </div>
 </div>
 
-<a><%= link_to "+Add New Cocktail!", new_cocktail_path, class: "btn btn-warning" %></a>
+<!-- link to add your own -->
 
+<div class="container">
+  <div class="row">
+    <div class="col-8 offset-2">
+      <div class="card-product">
+        <img src="https://www.thefix.com/sites/default/files/styles/article/public/shutterstock_501367912.jpg" />
+        <div class="card-product-infos">
+          <a><%= link_to "+Add Your Own Creation!", new_cocktail_path, class: "btn btn-gradient" %></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
+<!-- footer -->
+
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright">
+    This page was made with <i class="fas fa-heart"></i> at Le Wagon
+  </div>
+</div>

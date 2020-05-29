@@ -2,14 +2,15 @@
   overflow: hidden;
   height: 120px;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 5px orange;
   display: flex;
   align-items: center;
+  margin: 10px;
 }
 
 .card-product img {
   height: 100%;
-  width: 120px;
+  // width: 120px;
   object-fit: cover;
 }
 
@@ -29,4 +30,8 @@
 
 .card-product .card-product-infos {
   padding: 16px;
+  display: flex;
+  justify-content: center;
+  position: relative;
 }
+
